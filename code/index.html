@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todoアプリ</title>
-</head>
+
+
 <body>
-    <h1>Todoアプリ</h1>
-    <form action="">
-        <div>
-            <label for="task">タスクを記入してください</label>
-            <input type="text" id="task">
-        </div>
-        <button>登録</button>
-    </form>
+    <header>
+        <h1>ToDoアプリ</h1>
+    </header>
+    <div class="addli">
+        <input id="add-area" type="text" placeholder="To Do">
+        <span class="add-btn">add</span>
+    </div>
+    <div id="todo-app">
+        <ul class="lists" id="todo">
+            <p>ToDo</p>
+        </ul>
+        <ul class="lists" id="done">
+            <p>Done</p>
+        </ul>
+    </div>
 </body>
-</html>
+
