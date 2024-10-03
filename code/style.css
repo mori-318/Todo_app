@@ -1,0 +1,7 @@
+.h1 {
+    background-color: #e92e11; /* 背景色 */
+    padding: 20px;             /* 内側の余白 */
+    color: white;              /* 文字色 */
+    font-size: 36px;           /* フォントサイズ */
+    margin: 0;                 /* マージンをなくす */
+}
