@@ -8,12 +8,16 @@ const todoList = []
 const ul = document.createElement('ul');
 document.body.appendChild(ul); // 必要な場所に<ul>を追加
 
+const deleteTodo = (e)=>{
+    const li = e.target.parentElement;
+    ul.removeChild(li)
+}
+
 const addTodo = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // フォームの強制リロードを抑止
+
     const todoText = todoInput.value;
     if (todoText === "") return;
-
-    console.log(todoText)
 
     // todoListにinputされた内容を追加
     todoList.push(todoText)
@@ -21,11 +25,17 @@ const addTodo = (e) => {
     // 新しい<li>要素を作成し、todoListの最新のタスクを追加
     const li = document.createElement('li');
     li.textContent = todoText;
-
+    // 削除ボタンを作成
+    const deleteButton = document.createElement('button');
+    deleteButton.addEventListener('click', deleteTodo);
+    deleteButton.textContent = "削除";
+    
+    li.appendChild(deleteButton);
     ul.appendChild(li);
 
+
     todoInput.value = "";
-}
+};
 
 // フォームのsubmitイベントにaddTodo関数を関連付ける
 const form = document.getElementById('todo-form');
